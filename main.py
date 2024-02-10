@@ -51,11 +51,14 @@ def main():
     # Query LLM with user input and context data
     if st.button("Query LLM"):
         with st.spinner("Querying LLM..."):
+            qa = RetrievalQA.from_chain_type(
+                llm, chain_type="stuff", retriever=retriever
+            )
 
-            response = llm.invoke(query)
+            response = qa({"query": query})
 
             st.text("Llama2 Response:")
-            st.text(response)
+            st.text(response["result"])
 
 
 if __name__ == "__main__":

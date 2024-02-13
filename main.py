@@ -12,9 +12,9 @@ from langchain_community.llms import Ollama
 # Initialize MongoDB client
 uri = config.mongo_uri
 client = MongoClient(uri)
-db_name = "sample_mflix"
-collection_name = "movies"
-collection = client[db_name][collection_name]
+db_name = config.db_name
+coll_name = config.coll_name
+collection = client[db_name][coll_name]
 
 # Initialize text embedding model (encoder)
 embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")

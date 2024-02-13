@@ -1,6 +1,6 @@
-This Github shows you how to integrate Ollama with Atlas vector Search using Langchain to build a RAG App
+__This Github shows you how to integrate Ollama with Atlas vector Search using Langchain to build a RAG App__
 
-The githib is linked to this article [here](https://medium.com/@eugenetan_91090/what-is-ollama-dfdaa40cfbca) - check it out for more context.
+The github is linked to this article [here](https://medium.com/@eugenetan_91090/what-is-ollama-dfdaa40cfbca) - check it out for more context.
 
 __Getting started__
 

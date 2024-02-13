@@ -25,4 +25,5 @@ __3. Create your Atlas vector search index__
 ```
 
 __3. Run your Ollama | MongoDB RAG app with the command__
+<br/>
 ```streamlit run main.py```

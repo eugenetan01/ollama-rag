@@ -1,3 +1,9 @@
+This Github shows you how to integrate Ollama with Atlas vector Search using Langchain to build a RAG App
+
+The githib is linked to this article [here](https://medium.com/@eugenetan_91090/what-is-ollama-dfdaa40cfbca) - check it out for more context.
+
+*Getting started*
+
 __1.Encode vectors to your MongoDB cluster by running__
 ``` python3 encoder.py```
 - make sure config.py is declared with the fields (db_name, mongo_uri, coll_name)

@@ -46,19 +46,22 @@ def main():
     query = st.text_input("Enter your query:")
 
     # Retrieve context data from MongoDB Atlas Vector Search
-    retriever = vectorStore.as_retriever(search_kwargs={"k": 1})  # Modify this line
+    retriever = vectorStore.as_retriever()  # Modify this line
 
     # Query LLM with user input and context data
     if st.button("Query LLM"):
         with st.spinner("Querying LLM..."):
             qa = RetrievalQA.from_chain_type(
-                llm, chain_type="stuff", retriever=retriever
+                llm,
+                chain_type="stuff",
+                retriever=retriever,
+                return_source_documents=True,
             )
 
-            response = qa({"query": query})
+            response = qa(query)
 
             st.text("Llama2 Response:")
-            st.text(response["result"])
+            st.write(response)
 
 
 if __name__ == "__main__":

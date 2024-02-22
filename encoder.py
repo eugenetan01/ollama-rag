@@ -13,7 +13,8 @@ collection = connection[db][collection]
 # define transofrmer model (from https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
 model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
 
-for x in collection.find({"plot_embedding_hf": {"$exists": False}}, {}).limit(10):
+# for x in collection.find({"plot_embedding_hf": {"$exists": False}}, {}).limit(10):
+for x in collection.find({"title": "The Eugene Tan Movie"}, {}).limit(10):
     # checking if vector already computed for this doc
     if "vector" not in x.keys():
         if "title" in x.keys():
@@ -27,6 +28,8 @@ for x in collection.find({"plot_embedding_hf": {"$exists": False}}, {}).limit(10
             if "fullplot" in x.keys():
                 fullplot = x["fullplot"]
                 text = text + ". " + fullplot
+
+            print(text)
 
             vector = model.encode(text).tolist()
 

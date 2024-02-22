@@ -38,4 +38,4 @@ _4. Run your Ollama | MongoDB RAG app with the command_
 <br/>
 `streamlit run main.py`
 
-show me movies about Eugene Tan trying to build an AI Assistant
+

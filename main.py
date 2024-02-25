@@ -35,7 +35,7 @@ vectorStore = MongoDBAtlasVectorSearch(
 callback_manager = CallbackManager([StreamingStdOutCallbackHandler()])
 
 # Run the LLM (quantized local version by The Bloke's)
-llm = Ollama(model="llama2")
+llm = Ollama(model="llama2", callback_manager=callback_manager)
 
 
 # Streamlit App
